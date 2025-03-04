@@ -11,9 +11,9 @@
 #include "User_Management.h"
 
 int main(){
-  char *Title;
-  char *Author;
-  char *user_name;
+  char Title[200];
+  char Author[200];
+  char user_name[200];
   int action;
     printf("\n Welcone to mallot book shelf\n");
     printf("This library is free and you do not need to pay for anything, so this is all you can do with this library\n\n1:Borrow books\n2:Share books\n3:Searcy for books\n");
@@ -31,7 +31,7 @@ int main(){
 
     printf("%d\n", checker);
 
-    if( checker == 2 ){
+    if( checker == 2 || checker == 0 ){
       printf("\nWhat do you want to do.");
       printf("\n1:Borrow books\n2:Search book\n3:Return book.\n");
       printf("> ");

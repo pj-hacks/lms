@@ -15,9 +15,12 @@ int Book_search( char *Author, char *Title){
     }
     else{
         while( fgets( book_tile, sizeof(book_tile), File_search)){
+	  remove_newline(book_tile);
             if ( strcmp( book_tile, Title) == 0){
                 printf("Book found, wow now you don't need to waste time grab this great book and increase your knowledge\n");
+		return 0;
             }
         }
     }
+    return 0;
 }
