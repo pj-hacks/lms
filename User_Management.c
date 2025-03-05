@@ -9,11 +9,13 @@ int User_Creation(char name[]) {
     FILE *user_file;
     user_file = fopen("User.txt", "a");
     if (user_file == NULL) {
-        printf("\nUnable to open file");
+        perror("\nUnable to open file");
         return 1;
     }
 
-    fprintf(user_file, "%s\n", name); // Use fprintf() with a format string
+    if ( fprintf(user_file, "%s\n", name) < 0){
+      perror("Unable to open file.\n");// Use fprintf() with a format string
+    }
     fclose(user_file);
 
     return 0;
@@ -24,7 +26,7 @@ int User_Search(char *namep){
     FILE *user_file;
     user_file = fopen("User.txt", "r");
     if(user_file == NULL){
-        printf("\nUnable to open file");
+        perror("\nUnable to open file");
         return 1;
     }
     while(fgets(user_name, sizeof(user_name), user_file)){
