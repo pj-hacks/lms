@@ -2,6 +2,29 @@
 #include <string.h>
 #include "utility.h"
 
+
+int File_exists(const char *filename){
+  FILE *file = fopen(filename, "r");
+  if(file){
+    fclose(file);
+    return 1;
+  }
+  return 0;
+}
+
+void create_file(const char *filename){
+  if(!File_exists(filename)){
+    FILE *file = fopen(filename, "w");
+    if(file){
+      printf("Created missing file: %s\n",filename);
+      fclose(file);
+    }
+    else {
+      printf("Failed to create file: %s\n", filename);
+    }
+  }
+}
+
 int User_Creation(char name[]) {
     printf("\nAn account have been successfully created for you\n");
     printf("\nname = %s ", name);

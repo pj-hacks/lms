@@ -1,0 +1,12 @@
+Title: apple
+Name: Joseph
+School: uniuyo
+Time: Thu Mar  6 10:08:02 2025
+
+
+Title: Golden
+Name: 
+School: fi
+Time: Thu Mar  6 10:08:57 2025
+
+
